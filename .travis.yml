@@ -4,12 +4,11 @@ jdk:
 
 before_script:
   # Create settings.xml in 'src' directory
-  - cd src
   - python build/settings.py
 
 script: 
 
-  - if [ -e "settings.xml" ]; then mvn deploy -Drelease --settings settings.xml --global-settings ~/.m2/settings.xml; else mvn package -Drelease; fi
+  - if [ -e "settings.xml" ]; then mvn deploy -Prelease --settings settings.xml --global-settings ~/.m2/settings.xml; else mvn package -Prelease; fi
 
 
 notifications:
