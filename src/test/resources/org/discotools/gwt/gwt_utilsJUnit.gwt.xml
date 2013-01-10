@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module>
+  <!-- Inherit our applications main module.                      -->
+  <inherits name='org.discotools.gwt.gwt_utils' />
+
+  <!-- Specify the path to any remote services.                   -->
+  <servlet path="/gwt_utils/greet" class="org.discotools.gwt.server.GreetingServiceImpl" />
+
+</module>
