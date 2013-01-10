@@ -1,0 +1,26 @@
+language: java
+jdk:
+  - openjdk7
+
+before_script:
+  # Create settings.xml in 'src' directory
+  - cd src
+  - python build/settings.py
+
+script: 
+
+  - if [ -e "settings.xml" ]; then mvn deploy -Drelease --settings settings.xml --global-settings ~/.m2/settings.xml; else mvn package -Drelease; fi
+
+
+notifications:
+  email:
+    recipients:
+      - kenneth.gulbrandsoy@gmail.com
+
+# Set secure environment variables. These are only valid for repository kengu/gwt-leaflet! If you run this in a cloned repo, it will fail.
+env:
+  global:
+    # Encrypted username
+    - secure: "LZm0U5KPRTj8TNcC991oIqortfRVKVEHb+hTiEO1KPGsj6cdqj6B2YzDFVUB\nmiCRZvi+/q+96XFCVuo4UdKeBttrVCQC0nODD3HpuKoUr13hwTyMclzG9NPx\nn+o3DiCjW6kM8vaK40D7SC5FIwHF3OAfwQpIuNphbdXdfOvJDfo="
+    # Encrypted password
+    - secure: "e+LfJ8W+bgoE2tfj4fhFF+C8dhaS9ZUjboLdYEbgmnekcgPxkyL401Ek09SN\nPt/3/r/miB/KsgSpudC2i6+FR8jrls04YKOJF9Wpv8ejmcDI0J+g5XO2uIuU\ndAmeLlVxoUNdEr5OxUndKW8aSSsCHpamxk+bJYG4b/yXsFtJ7eY="
