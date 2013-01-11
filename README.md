@@ -1,7 +1,7 @@
 gwt-utils
 =========
 
-[![Build Status](https://secure.travis-ci.org/DISCOTools/gwt-utils.png)](http://travis-ci.org/DISCOTools/gwt-utils)
+[![Build Status](https://travis-ci.org/DISCOTools/gwt-utils.png?branch=master)](https://travis-ci.org/DISCOTools/gwt-utils)
 
 Collection of GWT utility classes
 
